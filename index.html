@@ -3,109 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Kulsum!</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 50%, #fdcb6e 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
-        .script-text {
-            font-family: 'Dancing Script', cursive;
-            color: #6c5ce7;
-        }
-        
-        .streamers {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(45deg, rgba(255, 234, 167, 0.3) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(253, 203, 110, 0.3) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(255, 234, 167, 0.3) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(253, 203, 110, 0.3) 75%);
-            background-size: 60px 60px;
-            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-            animation: streamers 20s linear infinite;
-        }
-        
-        @keyframes streamers {
-            0% { transform: translateX(-100px); }
-            100% { transform: translateX(100px); }
-        }
-        
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .iris-flower {
-            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 50%, #5f3dc4 100%);
-            border-radius: 50% 10% 50% 10%;
-            transform: rotate(45deg);
-            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
-        }
-        
-        .iris-petal {
-            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
-            border-radius: 50%;
-            position: absolute;
-        }
-        
-        .photo-frame {
-            background: linear-gradient(45deg, #ffffff, #f8f9fa);
-            border: 3px solid #6c5ce7;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.2);
-            overflow: hidden;
-        }
-        
-        .sparkle {
-            position: absolute;
-            background: #ffd700;
-            border-radius: 50%;
-            animation: sparkle 2s linear infinite;
-        }
-        
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-        
-        .message-text {
-            color: #2d3436;
-            font-style: italic;
-            line-height: 1.6;
-        }
-    </style>
+    <title>Santosh Shop - Payment Gateway</title>
+    <meta name="description" content="Send payments to Santosh Shop through UPI. Scan QR code or click Pay Now for instant payments.">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/simple-style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏪%3C/text%3E%3C/svg%3E">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Santosh Shop">
 </head>
 <body>
-    <div class="streamers"></div>
-    
-    <!-- Sparkles -->
-    <div class="sparkle w-2 h-2 top-20 left-20" style="animation-delay: 0s;"></div>
-    <div class="sparkle w-3 h-3 top-32 right-32" style="animation-delay: 0.5s;"></div>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Header Section -->
+        <header class="header-section">
+            <div class="shop-icon">
+                <i class="fas fa-store"></i>
+            </div>
+            <h1 class="shop-name">Santosh Shop</h1>
+            <p class="shop-tagline">Support me by sending payments</p>
+        </header>
+
+        <!-- Payment Section -->
+        <section class="payment-section">
+            <!-- QR Code Container -->
+            <div class="qr-container">
+                <div class="qr-wrapper">
+                    <img 
+                        id="qrCodeImage" 
+                        src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=upi%3A//pay%3Fpa%3Dsantoshpaul501%40okhdfcbank%26pn%3DSantosh%2520Shop%26am%3D%26cu%3DINR%26tn%3DSupport%2520Payment"
+                        alt="Santosh Shop UPI QR Code" 
+                        class="qr-code"
+                    >
+                </div>
+            </div>
+
+            <!-- Payment Buttons -->
+            <div class="button-container">
+                <button class="pay-btn" id="payNowBtn">
+                    <i class="fas fa-credit-card"></i>
+                    Pay Now
+                </button>
+                
+                <button class="download-btn" id="downloadQRBtn">
+                    <i class="fas fa-download"></i>
+                    Download QR
+                </button>
+            </div>
+
+            <!-- UPI Info -->
+            <div class="upi-info">
+                <p class="upi-id">
+                    <i class="fas fa-wallet"></i>
+                    UPI ID: <span>santoshpaul501@okhdfcbank</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Santosh Shop. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Thank You Modal -->
+    <div class="modal-overlay" id="thankYouModal">
+        <div class="modal">
+            <div class="modal-content">
+                <div class="success-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Thank You!</h3>
+                <p>Thank you for your support! Your payment means a lot to us.</p>
+                <button class="close-btn" id="closeModal">
+                    <i class="fas fa-times"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/simple-main.js"></script>
+</body>
+</html>    <div class="sparkle w-3 h-3 top-32 right-32" style="animation-delay: 0.5s;"></div>
     <div class="sparkle w-2 h-2 top-96 left-1/4" style="animation-delay: 1s;"></div>
     <div class="sparkle w-3 h-3 bottom-32 right-20" style="animation-delay: 1.5s;"></div>
     <div class="sparkle w-2 h-2 bottom-20 left-1/3" style="animation-delay: 2s;"></div>
